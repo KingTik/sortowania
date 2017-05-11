@@ -3,8 +3,8 @@ import math
 import copy
 def bubbleSort(tablica):
     """ sortowanie bombelkowe """
-    for i in range(0, len(tablica)-1):
-        for n in range(0, len(tablica)-1-i):
+    for i in range(0, len(tablica)-1): #pierwsza petla
+        for n in range(0, len(tablica)-1-i): #druga petla pomniejszona o posortowana czesc
             if tablica[n] > tablica[n+1]:
                 tmp = tablica[n]
                 tablica[n] = tablica[n+1]

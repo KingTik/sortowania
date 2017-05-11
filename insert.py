@@ -3,7 +3,7 @@ import math
 import copy
 
 def insertSort(tablica):
-    
+    """ insert sort"""
     N = len(tablica)
 
     for i in range(1, N):

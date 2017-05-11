@@ -2,31 +2,32 @@ import numpy
 import math
 import copy
 def shellSort(tablica):
-    
+    """ shell sort"""
     N = len(tablica)
-    h = int(math.floor(N/2))
+    h = int(math.floor(N/2)) #rozstaw
 
 
     while h >= 1:
         
         
-        for i in range (0, N-h):
+        for i in range (0, N-h): # przejscie 'w przod' tablicy
             done = False
             j = i
-            while(done == False):
+            while(done == False):   #jezeli jest potrzeba przejscie 'w tyl' tablicy w celu znalezienia odpowiedniego miejsca
                 
                 if tablica[j] > tablica[j+h]:
+                    #podmiana
                     tmp = tablica[j]
                     tablica[j] = tablica[j+h]
                     tablica[j+h] = tmp
                 
-                if j-h >= 0:
+                if j-h >= 0:    #przestawienie porownania o jeden rozstaw w tyl
                     j = j-h
                 else:
-                    done = True
+                    done = True #znaleziono miejsce
                 
 
-        h = h = int(math.floor(h/2))
+        h = h = int(math.floor(h/2)) #zmniejszenie rozstawu
 
 
     return tablica
